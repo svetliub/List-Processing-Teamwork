@@ -1,0 +1,7 @@
+D:\Programirane\SoftUni\3.1_ПрактическаРаботаВЕкип\4_Task_Management_Tools_Kanban_Trello\Demo\ListProcessing-Demo\StartUp\bin\Debug\StartUp.exe.config
+D:\Programirane\SoftUni\3.1_ПрактическаРаботаВЕкип\4_Task_Management_Tools_Kanban_Trello\Demo\ListProcessing-Demo\StartUp\bin\Debug\StartUp.exe
+D:\Programirane\SoftUni\3.1_ПрактическаРаботаВЕкип\4_Task_Management_Tools_Kanban_Trello\Demo\ListProcessing-Demo\StartUp\bin\Debug\StartUp.pdb
+D:\Programirane\SoftUni\3.1_ПрактическаРаботаВЕкип\4_Task_Management_Tools_Kanban_Trello\Demo\ListProcessing-Demo\StartUp\obj\Debug\ListProcessing.csprojResolveAssemblyReference.cache
+D:\Programirane\SoftUni\3.1_ПрактическаРаботаВЕкип\4_Task_Management_Tools_Kanban_Trello\Demo\ListProcessing-Demo\StartUp\obj\Debug\ListProcessing.csproj.CoreCompileInputs.cache
+D:\Programirane\SoftUni\3.1_ПрактическаРаботаВЕкип\4_Task_Management_Tools_Kanban_Trello\Demo\ListProcessing-Demo\StartUp\obj\Debug\StartUp.exe
+D:\Programirane\SoftUni\3.1_ПрактическаРаботаВЕкип\4_Task_Management_Tools_Kanban_Trello\Demo\ListProcessing-Demo\StartUp\obj\Debug\StartUp.pdb
