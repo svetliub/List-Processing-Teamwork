@@ -41,6 +41,8 @@ namespace StartUp
                         ListProcessingMethods.Insert(index, word, stringList);
                         break;
                     case "delete":
+                        index = int.Parse(inputList[1]);
+                        ListProcessingMethods.Delete(index, stringList);
                         break;
                     case "roll":
                         break;

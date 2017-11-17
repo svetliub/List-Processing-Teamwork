@@ -35,6 +35,18 @@ namespace StartUp
             PrintList(list);
         }
 
+        public static void Delete(int index, List<string> list)
+        {
+            if (index < 0 || index > list.Count - 1)
+            {
+                Console.WriteLine($"Error: invalid index {index}");
+                return;
+            }
+
+            list.RemoveAt(index);
+            PrintList(list);
+        }
+
         private static void PrintList(List<string> list)
         {
             Console.WriteLine(string.Join(" ", list));
