@@ -120,5 +120,67 @@ namespace StartUp
 
             return true;
         }
+
+        public static void RollLeft(List<string> list)
+        {
+            var swapVar = list[0];
+
+            for (int i = 0; i < list.Count - 1; i++)
+            {
+                list[i] = list[i + 1];
+            }
+            list[list.Count - 1] = swapVar;
+
+            PrintList(list);
+        }
+
+        public static void RollRight(List<string> list)
+        {
+            var swapVar = list[list.Count - 1];
+
+            for (int i = list.Count - 1; i > 0; i--)
+            {
+                list[i] = list[i - 1];
+            }
+            list[0] = swapVar;
+
+            PrintList(list);
+        }
+
+        public static void Sort(List<string> list,List<string> inputList)
+        {
+            if (inputList.Count != 1)
+            {
+                ErrorMessage();
+            }
+            else
+            {
+                list.Sort();
+
+                PrintList(list);
+            }
+        }
+
+        public static void Count(List<string> list,List<string> inputList)
+        {
+            if (inputList.Count != 2)
+            {
+                ErrorMessage();
+            }
+            else
+            {
+                int count = 0;
+                var stringSearched = inputList[1];
+
+                foreach (var item in list)
+                {
+                    if (item == stringSearched)
+                    {
+                        count++;
+                    }
+                }
+                Console.WriteLine(count);
+            }
+        }
     }
 }
