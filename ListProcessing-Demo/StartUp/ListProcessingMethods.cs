@@ -7,91 +7,98 @@ namespace StartUp
     {
         public static void Append(List<string> list, List<string> commands)
         {
-            if (commands.Count != 2)
+            if (IsValidCommandsLength(commands, 2))
+            {
+                string word = commands[1];
+                list.Add(word);
+                PrintList(list);
+            }
+            else
             {
                 ErrorMessage();
-                return;
             }
-
-            string word = commands[1];
-            list.Add(word);
-            PrintList(list);
         }
 
         public static void Prepend(List<string> list, List<string> commands)
         {
-            if (commands.Count != 2)
+            if (IsValidCommandsLength(commands, 2))
+            {
+                string word = commands[1];
+                list.Insert(0, word);
+                PrintList(list);
+            }
+            else
             {
                 ErrorMessage();
-                return;
             }
-
-            string word = commands[1];
-            list.Insert(0, word);
-            PrintList(list);
         }
 
         public static void Reverse(List<string> list, List<string> commands)
         {
-            if (commands.Count != 1)
+            if (IsValidCommandsLength(commands, 1))
+            {
+                list.Reverse();
+                PrintList(list);
+            }
+            else
             {
                 ErrorMessage();
-                return;
             }
-            list.Reverse();
-            PrintList(list);
         }
 
         public static void Insert(List<string> list, List<string> commands)
         {
-            if (commands.Count != 3)
+            if (IsValidCommandsLength(commands, 3))
+            {
+                int index;
+                string word = commands[2];
+
+                if (!int.TryParse(commands[1], out index))
+                {
+                    ErrorMessage();
+                    return;
+                }
+
+                if (index < 0 || index > list.Count - 1)
+                {
+                    Console.WriteLine($"Error: invalid index {index}");
+                    return;
+                }
+
+                list.Insert(index, word);
+                PrintList(list);
+            }
+            else
             {
                 ErrorMessage();
-                return;
             }
-
-            if (!int.TryParse(commands[1], out var n))
-            {
-                ErrorMessage();
-                return;
-            }
-
-            int index = int.Parse(commands[1]);
-            string word = commands[2];
-
-            if (index < 0 || index > list.Count - 1)
-            {
-                Console.WriteLine($"Error: invalid index {index}");
-                return;
-            }
-
-            list.Insert(index, word);
-            PrintList(list);
         }
 
         public static void Delete(List<string> list, List<string> commands)
         {
-            if (commands.Count != 2)
+            if (IsValidCommandsLength(commands, 2))
+            {
+                int index;
+
+                if (!int.TryParse(commands[1], out index))
+                {
+                    ErrorMessage();
+                    return;
+                }
+
+                if (index < 0 || index > list.Count - 1)
+                {
+                    Console.WriteLine($"Error: invalid index {index}");
+                    return;
+                }
+
+                list.RemoveAt(index);
+                PrintList(list);
+            }
+            else
             {
                 ErrorMessage();
-                return;
             }
-
-            if (!int.TryParse(commands[1], out var n))
-            {
-                ErrorMessage();
-                return;
-            }
-
-            int index = int.Parse(commands[1]);
-
-            if (index < 0 || index > list.Count - 1)
-            {
-                Console.WriteLine($"Error: invalid index {index}");
-                return;
-            }
-            list.RemoveAt(index);
-            PrintList(list);
         }
 
         private static void PrintList(List<string> list)
@@ -102,6 +109,16 @@ namespace StartUp
         private static void ErrorMessage()
         {
             Console.WriteLine("Error: invalid command parameters");
+        }
+
+        private static bool IsValidCommandsLength(List<string> commands, int length)
+        {
+            if (commands.Count != length)
+            {
+                return false;
+            }
+
+            return true;
         }
     }
 }
