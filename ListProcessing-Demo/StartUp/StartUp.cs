@@ -32,6 +32,7 @@ namespace StartUp
                         ListProcessingMethods.Prepend(word, stringList);
                         break;
                     case "reverse":
+                        ListProcessingMethods.Reverse(stringList);
                         break;
                     case "insert":
                         break;
