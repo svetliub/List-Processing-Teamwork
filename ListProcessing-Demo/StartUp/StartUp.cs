@@ -20,6 +20,7 @@ namespace StartUp
                 
                 string command = inputList[0];
                 string word = string.Empty;
+                int index;
 
                 switch (command)
                 {
@@ -35,6 +36,9 @@ namespace StartUp
                         ListProcessingMethods.Reverse(stringList);
                         break;
                     case "insert":
+                        index = int.Parse(inputList[1]);
+                        word = inputList[2];
+                        ListProcessingMethods.Insert(index, word, stringList);
                         break;
                     case "delete":
                         break;
