@@ -6,7 +6,7 @@ namespace StartUp
 {
     public class StartUp
     {
-        static void Main(string[] args)
+        static void Main()
         {
             List<string> stringList = Console.ReadLine().Split().ToList();
 
@@ -19,14 +19,17 @@ namespace StartUp
                 List<string> inputList = input.Split().ToList();
                 
                 string command = inputList[0];
+                string word = string.Empty;
 
                 switch (command)
                 {
                     case "append":
-                        string word = inputList[1];
+                        word = inputList[1];
                         ListProcessingMethods.Append(word, stringList);
                         break;
                     case "prepend":
+                        word = inputList[1];
+                        ListProcessingMethods.Prepend(word, stringList);
                         break;
                     case "reverse":
                         break;

@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace StartUp
 {
@@ -11,6 +8,12 @@ namespace StartUp
         public static void Append(string word, List<string> list)
         {
             list.Add(word);
+            Console.WriteLine(string.Join(" ", list));
+        }
+
+        public static void Prepend(string word, List<string> list)
+        {
+            list.Insert(0, word);
             Console.WriteLine(string.Join(" ", list));
         }
     }
