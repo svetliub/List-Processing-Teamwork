@@ -19,30 +19,23 @@ namespace StartUp
                 List<string> inputList = input.Split().ToList();
                 
                 string command = inputList[0];
-                string word = string.Empty;
-                int index;
-
+                
                 switch (command)
                 {
                     case "append":
-                        word = inputList[1];
-                        ListProcessingMethods.Append(word, stringList);
+                        ListProcessingMethods.Append(stringList, inputList);
                         break;
                     case "prepend":
-                        word = inputList[1];
-                        ListProcessingMethods.Prepend(word, stringList);
+                        ListProcessingMethods.Prepend(stringList, inputList);
                         break;
                     case "reverse":
-                        ListProcessingMethods.Reverse(stringList);
+                        ListProcessingMethods.Reverse(stringList, inputList);
                         break;
                     case "insert":
-                        index = int.Parse(inputList[1]);
-                        word = inputList[2];
-                        ListProcessingMethods.Insert(index, word, stringList);
+                        ListProcessingMethods.Insert(stringList, inputList);
                         break;
                     case "delete":
-                        index = int.Parse(inputList[1]);
-                        ListProcessingMethods.Delete(index, stringList);
+                        ListProcessingMethods.Delete(stringList, inputList);
                         break;
                     case "roll":
                         break;
