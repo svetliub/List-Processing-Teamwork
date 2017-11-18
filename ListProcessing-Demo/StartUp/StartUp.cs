@@ -82,6 +82,10 @@ namespace StartUp
                 {
                     ListProcessingMethods.RollRight(stringList);
                 }
+                else
+                {
+                    Console.WriteLine("Error: invalid command parameters");
+                }
             }
         }
     }
